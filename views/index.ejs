@@ -7,5 +7,18 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <button onclick="handlePost()">点击触发post</button>
   </body>
+  <script>
+    function handlePost() {
+      let xhr = new XMLHttpRequest();
+      xhr.open('POST', '/', true);
+      // xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send({aaa: 'bbb'});
+      console.log(xhr);
+      xhr.onloadend = function() {
+        console.log(xhr.response);
+      }
+    }
+  </script>
 </html>
