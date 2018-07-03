@@ -8,13 +8,14 @@ router.use(function(req, res, next) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express', req: req});
 });
 
 /* POST home page */ 
 router.post('/', function(req, res, next) {
-  console.log('post');
+  console.log(req.xhr);
   // res.json({name: 'syc', value: '1231231'});
+  // res.status(500);
   res.send('post request');
 });
 
